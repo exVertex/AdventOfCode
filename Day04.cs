@@ -123,7 +123,7 @@ namespace AdventOfCode2021 {
 
             foreach(int number in bingoNumbers) {
                 foreach(BingoBoard board in boards) {
-                    if(firstPart || !board.didBoardWin()) { // If firstPart set to false, it will look for last winning board
+                    if(firstPart || !board.didBoardWin()) { // If firstPart set to false, it will look for last winning 
                         board.crossNumber(number);
                         List<int> bingo = board.checkForBingo();
                         if (bingo.Count == 5) {

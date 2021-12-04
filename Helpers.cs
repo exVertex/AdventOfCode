@@ -19,7 +19,7 @@ namespace AdventOfCode2021 {
         }
         public static int[] sliceLineToIntegerArray(String pathToInput) {
             var storage = File.ReadAllLines(pathToInput);
-            
+        
             return stringToIntArray(storage[0].Split(','));
         }
         public static string[] parsePuzzleInputToStringArray(String pathToInput) {
