@@ -34,12 +34,9 @@ namespace AdventOfCode2021 {
         public static void getDay01Results(){
             var puzzleInput = Helpers.parsePuzzleInputToIntegerArray("./puzzleInputs/day01.txt");
 
-            int measurementIncreases = calculcateMeasuermentIncreases(puzzleInput); // Part 1
-            int threeSumMeasurementIncreases = calculcateThreeSumMeasuermentIncreases(puzzleInput); // Part 2
-
             Console.WriteLine("~~~~~~~~~~~~~ Day 1 ~~~~~~~~~~~~~");
-            Console.WriteLine("Part 1: " + measurementIncreases);
-            Console.WriteLine("Part 2: " + threeSumMeasurementIncreases);                        
+            Console.WriteLine("Part 1: " + calculcateMeasuermentIncreases(puzzleInput));
+            Console.WriteLine("Part 2: " + calculcateThreeSumMeasuermentIncreases(puzzleInput));                        
         }
 
     }  

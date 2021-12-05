@@ -85,8 +85,8 @@ namespace AdventOfCode2021 {
         }
     }
     class Day04 {
-            /// <summary> Packs the puzzleInput into <see cref="BingoBoard"/>. </summary>
-            /// <returns> List of <see cref="BingoBoard"/>. </returns>
+        /// <summary> Packs the puzzleInput into <see cref="BingoBoard"/>. </summary>
+        /// <returns> List of <see cref="BingoBoard"/>. </returns>
         private static List<BingoBoard> setupBingoBoards(string pathToInput) {
             List<BingoBoard> bingoBoards = new List<BingoBoard>();
             var storage = File.ReadAllLines(pathToInput);
@@ -148,7 +148,7 @@ namespace AdventOfCode2021 {
 
             Console.WriteLine("~~~~~~~~~~~~~ Day 4 ~~~~~~~~~~~~~");
             Console.WriteLine("Part 1: " + getSumMultipliedByWinningNumber(bingoNumbers, boards));
-            Console.WriteLine("Part 1: " + getSumMultipliedByWinningNumber(bingoNumbers, boards, false));
+            Console.WriteLine("Part 2: " + getSumMultipliedByWinningNumber(bingoNumbers, boards, false));
 
         }
     }
