@@ -1,7 +1,7 @@
 using System;
 
 namespace AdventOfCode2021 {
-    class Day01 {
+    class Day01 : IDay {
         /// <summary> Calculates the number of times a depth (puzzle input) measurement increases from the previous measurement. </summary>
         /// <param name="input"> Puzzle input. </param>
         /// <returns> Sum of the increases. </returns>
@@ -15,6 +15,7 @@ namespace AdventOfCode2021 {
             }
             return increases;
         }
+
         /// <summary> Calculates the number of times the sum of measurements in this sliding window increases. </summary>
         /// <param name="input"> Puzzle input. </param>
         /// <returns> Sum of the three-measurements increases. </returns>
@@ -31,7 +32,7 @@ namespace AdventOfCode2021 {
             }
             return increases;
         }
-        public static void getDay01Results(){
+        public void getResults(){
             var puzzleInput = Helpers.parsePuzzleInputToIntegerArray("./puzzleInputs/day01.txt");
 
             Console.WriteLine("~~~~~~~~~~~~~ Day 1 ~~~~~~~~~~~~~");

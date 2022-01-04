@@ -1,9 +1,11 @@
 ﻿namespace AdventOfCode2021 {
+    interface IDay {
+        void getResults();
+    }
     class Program {
-        static void Main(string[] args) {            
-            Day01.getDay01Results();
-            Day04.getDay04Results();   
-            Day05.getDay05Results();
-        }
+        static void Main(string[] args) {
+            var day01 = new Day01();
+            day01.getResults();
+        }    
     }
 }
