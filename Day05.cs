@@ -1,7 +1,53 @@
 using System;
-
+using System.Collections.Generic;
 namespace AdventOfCode2021 {
+
+    class Point {
+        private int x;
+        public int getX() {
+            return this.x;
+        }
+        private int y;
+        public Point(int x, int y) {
+            this.x = x;
+            this.y = y;
+        }
+        public override int GetHashCode(){
+            return 17 * x + 11 * y;
+        }
+        public override bool Equals(object obj) {
+            return obj is Point && Equals((Point) obj);
+        }
+        public bool Equals(Point that) {
+            return this.x == that.x && y == that.y;
+        }
+    }
+
     class Day05 {
+
+        public static void getDay05Results() {
+            var puzzleInput = Helpers.parsePuzzleInputToStringArray("./puzzleInputs/day05.txt"); 
+            HashSet<Point> points = new HashSet<Point>();
+            HashSet<int> ints = new HashSet<int>();
+
+            ints.Add(1);
+            ints.Add(1);
+
+            Point sean = new Point(17, 11);
+            Point petra = new Point(17, 11);
+
+            points.Add(sean);
+            points.Add(petra);
+            if (sean.Equals(petra)) {
+                Console.WriteLine(points.Count);
+            }
+
+            Console.WriteLine("~~~~~~~~~~~~~ Day 5 ~~~~~~~~~~~~~");
+            Console.WriteLine("Part 1: " + sean);
+            Console.WriteLine("Part 2: ");
+        }
+    }
+    class Day05TerribleSolution {
         /// <summary> Creates a blank diagram. </summary>
         /// <param name="input"> Puzzle input. </param>
         /// <returns> 2D array. </returns>
