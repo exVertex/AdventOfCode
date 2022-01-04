@@ -2,10 +2,4 @@
 
 My solutions for Advent of Code 2021 Challenges solved in C#.
 
-## How to run:
-1. Option: Using Visual Studio Code
-
-    //TODO
-2. Option: Using commandline
-
-    //TODO
+<em><strong>Disclaimer:</strong> This is still a work in progress.</em>
