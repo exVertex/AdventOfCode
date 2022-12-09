@@ -1,6 +1,8 @@
+using Core;
 using System;
 using System.Collections.Generic;
-namespace AdventOfCode2021 {
+
+namespace AdventOfCode.Y2021.Solutions {
 
     class Point {
         private int x;
@@ -26,7 +28,7 @@ namespace AdventOfCode2021 {
     class Day05 {
 
         public static void getDay05Results() {
-            var puzzleInput = Helpers.parsePuzzleInputToStringArray("./puzzleInputs/day05.txt"); 
+            var puzzleInput = Utils.parsePuzzleInputToStringArray("./puzzleInputs/day05.txt"); 
             HashSet<Point> points = new HashSet<Point>();
             HashSet<int> ints = new HashSet<int>();
 
@@ -64,8 +66,8 @@ namespace AdventOfCode2021 {
 
             foreach(string line in input) {
                 string[] modded = line.Split(" -> ");
-                int[] ex = Helpers.stringToIntArray(modded[0].Split(','));
-                int[] ey = Helpers.stringToIntArray(modded[1].Split(','));
+                int[] ex = Utils.stringToIntArray(modded[0].Split(','));
+                int[] ey = Utils.stringToIntArray(modded[1].Split(','));
                 x1 = ex[0];
                 x2 = ey[0];
                 y1 = ex[1];
@@ -150,7 +152,7 @@ namespace AdventOfCode2021 {
         }
         /// <summary> Calls the Day05 methods in the correct order and prints the result. </summary>
         public static void getDay05Results() {
-            var puzzleInput = Helpers.parsePuzzleInputToStringArray("./puzzleInputs/day05.txt");
+            var puzzleInput = Utils.parsePuzzleInputToStringArray("./puzzleInputs/day05.txt");
             var diagram = fillTheDiagram(puzzleInput);
             var diagramWithHorizontals = fillTheDiagram(puzzleInput, true);
 
