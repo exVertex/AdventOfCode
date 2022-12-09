@@ -1,9 +1,9 @@
+using Core;
 using System;
-using System.IO;
 using System.Linq;
 using System.Collections.Generic;
 
-namespace AdventOfCode2021 {
+namespace AdventOfCode.Y2021.Solutions {
     public class Fish {
         private int timer;
 
@@ -86,7 +86,7 @@ namespace AdventOfCode2021 {
         }
         
         public static void getDay06Results() {
-            var input = Helpers.sliceLineToIntegerArray("./puzzleInputs/day06.txt");
+            var input = Utils.sliceLineToIntegerArray("./puzzleInputs/day06.txt");
             List<Fish> theFish = createFishGroup(input);
 
             Console.WriteLine("~~~~~~~~~~~~~ Day 6 ~~~~~~~~~~~~~");
