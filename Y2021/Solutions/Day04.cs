@@ -1,9 +1,10 @@
+using Core;
 using System;
 using System.IO;
 using System.Linq;
 using System.Collections.Generic;
 
-namespace AdventOfCode2021 {
+namespace AdventOfCode.Y2021.Solutions {
     class BingoBoard {
         ///<value> 2D array represended in list of dictionaries stored in an Array.
         ///Each dictionary contains key (number in the board) and value (whether it has been crossed off or not). </value>
@@ -143,7 +144,7 @@ namespace AdventOfCode2021 {
             return 0;
         }
         public static void getDay04Results() {
-            var bingoNumbers = Helpers.sliceLineToIntegerArray("./puzzleInputs/day04.txt");
+            var bingoNumbers = Utils.sliceLineToIntegerArray("./puzzleInputs/day04.txt");
             var boards = setupBingoBoards("./puzzleInputs/day04.txt");           
 
             Console.WriteLine("~~~~~~~~~~~~~ Day 4 ~~~~~~~~~~~~~");
