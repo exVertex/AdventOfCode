@@ -3,7 +3,7 @@ using System.IO;
 using System.Linq;
 using System.Collections.Generic;
 
-namespace AdventOfCode2021 {
+namespace AdventOfCode.Y2021.Solutions {
     class Day14 {
         private static int processPolymers(int numberOfRounds, string masterline, Dictionary<string, string> rules) {
             
