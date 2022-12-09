@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace AdventOfCode2021 {
+namespace AdventOfCode.Y2021.Solutions {
     class Day03 {
         private static int getMoreCommonBit(List<string[]> input, int index, bool inverted = false) {
             int beat = 0;
