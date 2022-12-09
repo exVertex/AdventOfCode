@@ -1,8 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-
-namespace AdventOfCode2021 {
+namespace AdventOfCode.Y2021.Solutions {
     class Day02 {
         private static int depth, horizontalPosition, aim;
 
