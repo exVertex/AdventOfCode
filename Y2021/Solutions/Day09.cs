@@ -1,10 +1,7 @@
 using System;
-using System.Collections;
 using System.IO;
-using System.Collections.Generic;
-using System.Linq;
 
-namespace AdventOfCode2021 {
+namespace AdventOfCode.Y2021.Solutions {
     class Day09{
 
         public readonly record struct DailyTemperature(double HighTemp, double LowTemp) {
