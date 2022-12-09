@@ -1,15 +1,12 @@
-using System
+using System;
+using AdventOfCode.Y2021.Solutions;
 
 namespace AdventOfCode {
     class Program {
         static void Main(string[] args) {
 
             Console.WriteLine("I'm working.");
-
-            /*
-            var day01 = new Day01();
-            day01.getResults();
-            */
+            Day01.getResults();
         }    
     }
 }
