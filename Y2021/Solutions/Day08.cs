@@ -1,10 +1,12 @@
+using Core;
 using System;
+
 namespace AdventOfCode2021 {
     class Day08 {
 
 
         public static void getDay08Results() {
-            var puzzleInput = Helpers.parsePuzzleInputToArrayStringList("./puzzleInputs/testInput.txt");
+            var puzzleInput = Utils.parsePuzzleInputToArrayStringList("./puzzleInputs/testInput.txt");
 
             int numb = 0;
 
