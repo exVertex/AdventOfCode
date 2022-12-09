@@ -33,8 +33,8 @@ namespace AdventOfCode.Y2021.Solutions {
             }
             return increases;
         }
-        public void getResults(){
-            var puzzleInput = Utils.parsePuzzleInputToIntegerArray("./puzzleInputs/day01.txt");
+        public static void getResults(){
+            var puzzleInput = Utils.parsePuzzleInputToIntegerArray("./Y2021/PuzzleInputs/day01.txt");
 
             Console.WriteLine("~~~~~~~~~~~~~ Day 1 ~~~~~~~~~~~~~");
             Console.WriteLine("Part 1: " + calculcateMeasuermentIncreases(puzzleInput));
