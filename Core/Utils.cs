@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.IO;
 
-namespace Core {
+namespace AdventOfCode.Core {
     class Utils {
         public static int[] parsePuzzleInputToIntegerArray(String pathToInput) {
             var storage = File.ReadAllLines(pathToInput);
