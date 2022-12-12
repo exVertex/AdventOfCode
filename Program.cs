@@ -1,12 +1,21 @@
 using System;
-using AdventOfCode.Y2021.Solutions;
+using System.Collections.Generic;
+using AdventOfCode.Core;
+using AdventOfCode.Y2022.Solutions;
 
 namespace AdventOfCode {
     class Program {
         static void Main(string[] args) {
 
-            Console.WriteLine("I'm working.");
-            Day01.getResults();
+            var days = new List<Day> {
+                new Day01()
+            };
+
+            days[0].getResults();
+
+            foreach (var day in days) {
+                day.getResults();
+            }
         }    
     }
 }

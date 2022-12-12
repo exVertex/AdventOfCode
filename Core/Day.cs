@@ -1,12 +1,18 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace AdventOfCode.Core
 {
-    abstract class Day
+    public abstract class Day
     {
-        
+        int year;
+        int day;
+        string title;
+
+        public void getResults() {
+            Console.WriteLine("I am a result.");
+        }
+
+        public Day() {
+        }
     }
 }
