@@ -6,13 +6,15 @@ namespace AdventOfCode.Core {
         public int year {get; protected set; }
         protected string title {get; set; }
 
-        protected abstract string solvePartOne();
-        protected abstract string solvePartTwo();
+        protected abstract dynamic prepareInput();
+        protected abstract string solvePartOne(dynamic puzzleInput);
+        protected abstract string solvePartTwo(dynamic puzzleInput);
         
         public void getResults() {
+            var puzzleInput = prepareInput();
             Console.WriteLine( "--- Day " + this.day + ": " + this.title + " ---");
-            Console.WriteLine("Part 1: " + solvePartOne());
-            Console.WriteLine("Part 2: " + solvePartTwo());
+            Console.WriteLine("Part 1: " + solvePartOne(puzzleInput));
+            Console.WriteLine("Part 2: " + solvePartTwo(puzzleInput));
         }
     }
 }
