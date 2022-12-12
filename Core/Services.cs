@@ -1,18 +1,17 @@
 using System.Collections.Generic;
-using AdventOfCode.Y2022.Solutions;
-using AdventOfCode.Y2021.Solutions;
+using System;
 
 namespace AdventOfCode.Core
 {
     public class Services{
-        public static List<Day> createDaysSolutions() {
-
-            var solutions = new List<Day> {
-                new Y2022.Solutions.Day01()
+        internal static List<Day> createDaysSolutions() => new List<Day> { 
+            new Y2022.Solutions.Day01()
             };
 
-            return solutions;
+        internal static void printInstructions() {
+            Console.WriteLine("The command argument is not recognised.\n~~~~~~~~~~~~~~~");
+            Console.WriteLine("Please enter date of desired solution in the following format YYYY DD.");
+            Console.WriteLine("...or run the program without arguments to get the latest solution.");
         }
-
     }
 }
