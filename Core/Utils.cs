@@ -5,6 +5,13 @@ using System.IO;
 
 namespace AdventOfCode.Core {
     class Utils {
+
+        internal static string[] getArrayInput(String pathToInput) => File.ReadAllLines(pathToInput);
+
+        internal static string getLineInput(String pathToInput) => File.ReadAllText(pathToInput);
+
+        internal static int[] convertStringArrayToIntegerArray(String[] stringArray) => Array.ConvertAll(stringArray, element => int.Parse(element));
+
         public static int[] parsePuzzleInputToIntegerArray(String pathToInput) {
             var storage = File.ReadAllLines(pathToInput);
             int[] array = new int[storage.Count()];
@@ -14,13 +21,11 @@ namespace AdventOfCode.Core {
             }
             return array;
         }
-        public static int[] stringToIntArray(String[] stringArray) {
-            return Array.ConvertAll(stringArray, element => int.Parse(element));
-        }
+
         public static int[] sliceLineToIntegerArray(String pathToInput) {
             var storage = File.ReadAllLines(pathToInput);
         
-            return stringToIntArray(storage[0].Split(','));
+            return convertStringArrayToIntegerArray(storage[0].Split(','));
         }
         public static string[] parsePuzzleInputToStringArray(String pathToInput) {
             var storage = File.ReadAllLines(pathToInput);
