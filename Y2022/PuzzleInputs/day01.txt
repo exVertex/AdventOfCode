@@ -1,1 +1,1 @@
-<paste your puzzle input>
+<your puzzle input>
