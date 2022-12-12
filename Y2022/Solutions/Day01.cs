@@ -8,6 +8,7 @@ namespace AdventOfCode.Y2022.Solutions
     public class Day01 : Day {
 
         protected override dynamic preparePuzzleInput() => Utils.getArrayInput("./Y2022/PuzzleInputs/day01.txt");
+        
         protected override dynamic solveMain(dynamic puzzleInput) {
             int elf = 0;
             List<int> elfCalorieStorage = new List<int> {};
@@ -25,13 +26,11 @@ namespace AdventOfCode.Y2022.Solutions
         }
 
         protected override string getPartOne(dynamic key) {
-
             List<int> elfCalorieStorage = (List<int>)key;
             return elfCalorieStorage.First().ToString();
         }
 
         protected override string getPartTwo(dynamic key) {
-
             List<int> elfCalorieStorage = (List<int>)key;
             return (elfCalorieStorage[0] + elfCalorieStorage[1] + elfCalorieStorage[2]).ToString();
         }
