@@ -25,13 +25,13 @@ namespace AdventOfCode.Y2022.Solutions
             return elfCalorieStorage;
         }
 
-        protected override string getPartOne(dynamic blob) {
+        protected override string getPartOne(dynamic key) {
             
-            List<int> elfStorage = (List<int>)blob;
+            List<int> elfStorage = (List<int>)key;
             return elfStorage.Last().ToString();
         }
 
-        protected override string getPartTwo(dynamic preparedPuzzleInput) {
+        protected override string getPartTwo(dynamic key) {
 
             return "";
         }
