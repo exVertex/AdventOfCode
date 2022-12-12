@@ -11,12 +11,16 @@ namespace AdventOfCode.Y2022.Solutions
             title = "Calorie counting";
         }
 
-        protected override string solvePartOne() {
-            throw new NotImplementedException();
+        protected override dynamic preparePuzzleInput() {
+            return Utils.getArrayInput("./Y2022/PuzzleInputs/day01.txt");
         }
 
-        protected override string solvePartTwo() {
-            throw new NotImplementedException();
+        protected override string solvePartOne(dynamic puzzleInput) {
+            return "";
+        }
+
+        protected override string solvePartTwo(dynamic puzzleInput) {
+            return "";
         }
     }
 }
