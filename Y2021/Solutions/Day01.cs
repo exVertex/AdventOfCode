@@ -1,4 +1,4 @@
-using Core;
+using AdventOfCode.Core;
 using System;
 
 namespace AdventOfCode.Y2021.Solutions {

@@ -1,4 +1,4 @@
-using Core;
+using AdventOfCode.Core;
 using System;
 using System.IO;
 using System.Linq;

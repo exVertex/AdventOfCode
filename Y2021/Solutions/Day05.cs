@@ -1,4 +1,4 @@
-using Core;
+using AdventOfCode.Core;
 using System;
 using System.Collections.Generic;
 
@@ -66,8 +66,8 @@ namespace AdventOfCode.Y2021.Solutions {
 
             foreach(string line in input) {
                 string[] modded = line.Split(" -> ");
-                int[] ex = Utils.stringToIntArray(modded[0].Split(','));
-                int[] ey = Utils.stringToIntArray(modded[1].Split(','));
+                int[] ex = Utils.convertStringArrayToIntegerArray(modded[0].Split(','));
+                int[] ey = Utils.convertStringArrayToIntegerArray(modded[1].Split(','));
                 x1 = ex[0];
                 x2 = ey[0];
                 y1 = ex[1];
