@@ -20,20 +20,20 @@ namespace AdventOfCode.Y2022.Solutions
                     elf = 0;
                 }
             };
-            elfCalorieStorage.Sort();
 
-            return elfCalorieStorage;
+            return elfCalorieStorage.OrderByDescending(x => x).ToList();
         }
 
         protected override string getPartOne(dynamic key) {
-            
-            List<int> elfStorage = (List<int>)key;
-            return elfStorage.Last().ToString();
+
+            List<int> elfCalorieStorage = (List<int>)key;
+            return elfCalorieStorage.First().ToString();
         }
 
         protected override string getPartTwo(dynamic key) {
 
-            return "";
+            List<int> elfCalorieStorage = (List<int>)key;
+            return (elfCalorieStorage[0] + elfCalorieStorage[1] + elfCalorieStorage[2]).ToString();
         }
 
         public Day01() {
