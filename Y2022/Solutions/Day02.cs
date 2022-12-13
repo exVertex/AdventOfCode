@@ -25,16 +25,16 @@ namespace AdventOfCode.Y2022.Solutions {
             else return Draw;
         }
 
+        protected char setPlayerTwo(char playerOne, char playerTwo) {
+            if ((playerTwo == 'X' && playerOne == 'A') || (playerTwo == 'Y' && playerOne == 'C') || (playerTwo == 'Z' && playerOne== 'B')) return 'Z';
+            else if ((playerTwo == 'X' && playerOne== 'B') || (playerTwo == 'Y' && playerOne == 'A') || (playerTwo == 'Z' && playerOne == 'C')) return 'X';
+            else return 'Y';
+        }
 
         protected int getGameScore(char playerOne, char playerTwo, bool partTwo = false) {
             int roundScore = 0;
-            
-            // sets playerTwo to correct option in order to get the desired game outcome if partTwo flag is true
-            if(partTwo) {
-                if ((playerTwo == 'X' && playerOne == 'A') || (playerTwo == 'Y' && playerOne == 'C') || (playerTwo == 'Z' && playerOne== 'B')) playerTwo = 'Z';
-                else if ((playerTwo == 'X' && playerOne== 'B') || (playerTwo == 'Y' && playerOne == 'A') || (playerTwo == 'Z' && playerOne == 'C')) playerTwo = 'X';
-                else playerTwo = 'Y';
-            }
+
+            playerTwo = (partTwo) ? setPlayerTwo(playerOne, playerTwo) : playerTwo; // sets playerTwo to correct option in order to get the desired game outcome 
             roundScore += getPickScore(playerTwo);  // add points for pick selection
             roundScore += getResultScore(playerOne, playerTwo); // add points for game result
 
