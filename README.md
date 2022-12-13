@@ -12,5 +12,13 @@ Initially, this was a project where my AoC solutions were stored. With time, it 
       (ex. `dotent run 2022 05` will get you the result for AoC puzzle from year 2022, day 5.)  
       
 
+## Solved
+
+| Year\Day | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 20 | 21 | 22 | 23 | 24 | 25 |
+| -------- | - | - | - | - | - | - | - | - | - | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- | 
+| 2022 | ✔ | ✔ |
+| 2021 | ✔ | ✔ | ✔ | ✔ | ✔ | ✔ | | ✔ | ✔ | | | | | ✔ |
+| 2020 |
+
 
 <em><strong>Disclaimer:</strong> This is still a work in progress.</em>
