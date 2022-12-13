@@ -9,7 +9,5 @@ Initially, this was a project where my AoC solutions were stored. With time, it 
 2. Open a terminal and run `dotent run` at root.
 3. Follow the guided instructions.
 
-###
-
 
 <em><strong>Disclaimer:</strong> This is still a work in progress.</em>
