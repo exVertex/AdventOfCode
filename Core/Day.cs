@@ -8,8 +8,8 @@ namespace AdventOfCode.Core {
 
         protected abstract dynamic preparePuzzleInput();
         protected abstract dynamic solveMain(dynamic puzzleInput);
-        protected abstract string getPartOne(dynamic key);
-        protected abstract string getPartTwo(dynamic key);
+        protected abstract int getPartOne(dynamic key);
+        protected abstract int getPartTwo(dynamic key);
         
         public void getResults() {
             var key = solveMain(preparePuzzleInput());
