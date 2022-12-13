@@ -6,9 +6,7 @@ using System.IO;
 namespace AdventOfCode.Core {
     class Utils {
 
-        internal static string[] getArrayInput(String pathToInput) => File.ReadAllLines(pathToInput);
-
-        internal static string getLineInput(String pathToInput) => File.ReadAllText(pathToInput);
+        internal static string[] getInput(String pathToInput) => File.ReadAllLines(pathToInput);
 
         internal static int[] convertStringArrayToIntegerArray(String[] stringArray) => Array.ConvertAll(stringArray, element => int.Parse(element));
 
