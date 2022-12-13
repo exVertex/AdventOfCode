@@ -5,9 +5,7 @@ using System.Linq;
 namespace AdventOfCode.Y2022.Solutions
 {
     public class Day01 : Day {
-
-        protected override dynamic preparePuzzleInput() => Utils.getArrayInput("./Y2022/PuzzleInputs/day01.txt");
-        
+       
         protected override dynamic solveMain(dynamic puzzleInput) {
             int elf = 0;
             List<int> elfCalorieStorage = new List<int> {};
