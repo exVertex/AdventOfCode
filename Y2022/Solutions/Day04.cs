@@ -19,7 +19,7 @@ namespace AdventOfCode.Y2022.Solutions {
         }
 
         public Day04() {
-            day = 3;
+            day = 4;
             year = 2022;
             title = "";
         }
