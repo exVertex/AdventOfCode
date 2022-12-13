@@ -4,7 +4,6 @@ using AdventOfCode.Core;
 
 namespace AdventOfCode.Y2022.Solutions {
     public class Day02 : Day {
-        protected override dynamic preparePuzzleInput() => Utils.getArrayInput("./Y2022/PuzzleInputs/day02.txt");
 
         protected const int Rock = 1;
         protected const int Paper = 2;
