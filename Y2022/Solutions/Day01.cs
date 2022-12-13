@@ -24,14 +24,14 @@ namespace AdventOfCode.Y2022.Solutions
             return elfCalorieStorage.OrderByDescending(x => x).ToList();
         }
 
-        protected override string getPartOne(dynamic key) {
+        protected override int getPartOne(dynamic key) {
             List<int> elfCalorieStorage = (List<int>)key;
-            return elfCalorieStorage.First().ToString();
+            return elfCalorieStorage.First();
         }
 
-        protected override string getPartTwo(dynamic key) {
+        protected override int getPartTwo(dynamic key) {
             List<int> elfCalorieStorage = (List<int>)key;
-            return (elfCalorieStorage[0] + elfCalorieStorage[1] + elfCalorieStorage[2]).ToString();
+            return (elfCalorieStorage[0] + elfCalorieStorage[1] + elfCalorieStorage[2]);
         }
 
         public Day01() {
