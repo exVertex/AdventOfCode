@@ -6,7 +6,7 @@ namespace AdventOfCode.Y2022.Solutions
 {
     public class Day01 : Day {
        
-        protected override dynamic solveMain(dynamic puzzleInput) {
+        protected override dynamic solveMain(string[] puzzleInput) {
             int elf = 0;
             List<int> elfCalorieStorage = new List<int> {};
 
