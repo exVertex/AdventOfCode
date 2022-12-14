@@ -40,7 +40,7 @@ namespace AdventOfCode.Y2022.Solutions {
             return roundScore;
         }
 
-        protected override dynamic solveMain(dynamic puzzleInput) => puzzleInput;   // no main part to solve
+        protected override dynamic solveMain(string[] puzzleInput) => puzzleInput;   // no main part to solve
 
         protected override int getPartOne(dynamic key) {
             int score = 0;
