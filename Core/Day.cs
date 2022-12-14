@@ -6,11 +6,11 @@ namespace AdventOfCode.Core {
         public int year {get; protected set; }
         protected string title {get; set; }
         
-        protected abstract dynamic solveMain(dynamic puzzleInput);
+        protected abstract dynamic solveMain(string[] puzzleInput);
         protected abstract int getPartOne(dynamic key);
         protected abstract int getPartTwo(dynamic key);
 
-        protected dynamic preparePuzzleInput(string pathToInput) => Utils.getInput(pathToInput);
+        protected string[] preparePuzzleInput(string pathToInput) => Utils.getInput(pathToInput);
         
         public void getResults() {
             var key = solveMain(preparePuzzleInput(string.Format("./Y{0}/PuzzleInputs/day{1}.txt", this.year, this.day.ToString("00"))));
