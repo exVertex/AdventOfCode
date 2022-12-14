@@ -9,7 +9,7 @@ Initially, this was a project where my AoC solutions were stored. With time, it 
 2. Open a terminal and run `dotent run` at root.
     - If you run the command without any arguments, it will get the result of the latest puzzle.
     - If you run the command with YYYY DD arguments, it will get the result for AoC puzzle from year YYYY and day DD.
-      (ex. `dotent run 2022 05` will get you the result for AoC puzzle from year 2022, day 5.)  
+      (ex. `dotent run 2022 5` will get you the result for AoC puzzle from year 2022, day 5.)  
       
 
 ## Solved
