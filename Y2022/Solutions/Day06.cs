@@ -16,8 +16,6 @@ namespace AdventOfCode.Y2022.Solutions {
             return datastream.Length;   // safety net
         }
 
-        protected override dynamic solveMain(string[] puzzleInput) => puzzleInput[0];   //return a string instead an array of strings
-
         protected override int getPartOne(dynamic key) => getMarkerPosition(key, 4);
 
         protected override int getPartTwo(dynamic key) => getMarkerPosition(key, 14);

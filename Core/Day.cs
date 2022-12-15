@@ -6,7 +6,7 @@ namespace AdventOfCode.Core {
         public int year {get; protected set; }
         protected string title {get; set; }
         
-        protected virtual dynamic solveMain(string[] puzzleInput) => puzzleInput;
+        protected virtual dynamic prepareCommon(string[] puzzleInput) => puzzleInput;
         protected abstract int getPartOne(dynamic key);
         protected abstract int getPartTwo(dynamic key);
 

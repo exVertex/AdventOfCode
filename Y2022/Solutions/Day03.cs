@@ -8,8 +8,6 @@ namespace AdventOfCode.Y2022.Solutions {
 
         protected int getPriorityValue(int item) => (item > 91) ? item - 96 : item - 38;    // get value of the priority through char ascii values
         
-        protected override dynamic solveMain(string[] puzzleInput) => puzzleInput;  // no common main part to solve
-
         protected override int getPartOne(dynamic key) {
             List<char> commonItems = new List<char>();  // list to store items common in both compartments
 

@@ -5,7 +5,7 @@ using System.Linq;
 namespace AdventOfCode.Y2022.Solutions {
     public class Day01 : Day {
        
-        protected override dynamic solveMain(string[] puzzleInput) {
+        protected override dynamic prepareCommon(string[] puzzleInput) {
             int elf = 0;
             List<int> elfCalorieStorage = new List<int> {};
 

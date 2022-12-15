@@ -35,8 +35,6 @@ namespace AdventOfCode.Y2022.Solutions {
             return getPickScore(playerTwo) + getResultScore(playerOne, playerTwo); // return points for pick selection + points for game result
         }
 
-        protected override dynamic solveMain(string[] puzzleInput) => puzzleInput;   // no main part to solve
-
         protected override int getPartOne(dynamic key) => (new List<string>(key)).Sum(round => getGameScore(round[0], round[2]));   // // calculate the sum of all scores
 
         protected override int getPartTwo(dynamic key) => (new List<string>(key)).Sum(round => getGameScore(round[0], round[2], true));   // calculate the sum of all scores 

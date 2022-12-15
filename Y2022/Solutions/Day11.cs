@@ -3,7 +3,7 @@ using AdventOfCode.Core;
 namespace AdventOfCode.Y2022.Solutions {
     public class Day11 : Day {
 
-        protected override dynamic solveMain(string[] puzzleInput) {
+        protected override dynamic prepareCommon(string[] puzzleInput) {
             throw new System.NotImplementedException();
         }
 

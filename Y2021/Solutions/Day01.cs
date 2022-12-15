@@ -27,7 +27,7 @@ namespace AdventOfCode.Y2021.Solutions {
             }
             return increases;
         }
-        protected override dynamic solveMain(string[] puzzleInput) {
+        protected override dynamic prepareCommon(string[] puzzleInput) {
             throw new NotImplementedException();
         }
 

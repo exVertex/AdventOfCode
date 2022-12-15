@@ -9,7 +9,7 @@ namespace AdventOfCode.Y2022.Solutions {
         private int checkIfContains (int[] top, int[] bottom) => (top[1] >= bottom[1] && bottom[0] >= top[0]) ? 1 : 0; // checks if one task range contains the other
         private int checkIfOverlaps (int[] top, int[] bottom) => (bottom[1] >= top[0]) ? 1 : 0; // checks if task ranges overlap
 
-        protected override dynamic solveMain(string[] puzzleInput) {
+        protected override dynamic prepareCommon(string[] puzzleInput) {
             List<int[][]> elfGroups = new List<int[][]>();
 
             foreach (string line in puzzleInput) {

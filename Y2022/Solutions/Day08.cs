@@ -2,7 +2,7 @@ using AdventOfCode.Core;
 
 namespace AdventOfCode.Y2022.Solutions {
     public class Day08: Day {
-        protected override dynamic solveMain(string[] puzzleInput) {
+        protected override dynamic prepareCommon(string[] puzzleInput) {
             throw new System.NotImplementedException();
         }
 
@@ -17,7 +17,7 @@ namespace AdventOfCode.Y2022.Solutions {
         public Day08() {
             day = 8;
             year = 2022;
-            title = "";
+            title = "Treetop Tree House ";
         }
     }
 }
