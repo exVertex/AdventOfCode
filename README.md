@@ -3,6 +3,7 @@
 Initially, this was a project where my AoC solutions were stored. With time, it evolved into a tiny framework that makes solving the puzzles a bit faster, and the presentation of the puzzle results clean and unified. 
 
 
+🎄🎅🎄🎅🎄🎅🎄🎅🎄🎅🎄🎅🎄🎅🎄🎅🎄🎅🎄🎅🎄🎅🎄🎅🎄🎅
 ## Set-up
 <em>Prerequisites:</strong> [.NET 7.0](https://dotnet.microsoft.com/en-us/download/dotnet/7.0) installed on your device.</em>
 1. Clone the repository
