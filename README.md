@@ -4,7 +4,7 @@ Initially, this was a project where my AoC solutions were stored. With time, it 
 
 
 ## Set-up
-<em><strong>Prerequisites:</strong> [.NET 7.0](https://dotnet.microsoft.com/en-us/download/dotnet/7.0) installed on your device.</em>
+<em>Prerequisites:</strong> [.NET 7.0](https://dotnet.microsoft.com/en-us/download/dotnet/7.0) installed on your device.</em>
 1. Clone the repository
 2. Open a terminal and run `dotent run` at root.
     - If you run the command without any arguments, it will get the result of the latest puzzle.
@@ -22,5 +22,6 @@ Initially, this was a project where my AoC solutions were stored. With time, it 
 | 2021 | 💻 | 🧻 | 🧻 | 🧻 | 🧻 | 🧻 | | 🧻 | 🧻 | | | | | 🧻 |
 | 2020 |
 
+<strong>Legend:</strong> ✔ done -- 💻 in development -- 🧻 solution available, but not supported by the interface
 
 <em><strong>Disclaimer:</strong> This is still a work in progress.</em>
