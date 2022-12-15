@@ -6,7 +6,15 @@ using System.IO;
 namespace AdventOfCode.Core {
     class Utils {
 
-        internal static string[] getInput(String pathToInput) => File.ReadAllLines(pathToInput);
+        internal static string[] getInput(String pathToInput) {
+            
+            if(!File.Exists(pathToInput)) {
+                Console.WriteLine("Uh oh! File that contains puzzle input for desired solution is missing.");
+                Environment.Exit(0);
+            }
+
+            return File.ReadAllLines(pathToInput);
+        }
 
         internal static int[] convertStringArrayToIntegerArray(String[] stringArray) => Array.ConvertAll(stringArray, element => int.Parse(element));
 
