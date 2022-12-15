@@ -7,7 +7,7 @@ namespace AdventOfCode.Y2022.Solutions {
        
         protected override dynamic prepareCommon(string[] puzzleInput) {
             int elf = 0;
-            List<int> elfCalorieStorage = new List<int> {};
+            var elfCalorieStorage = new List<int> {};
 
             foreach (var line in puzzleInput) {
                 if (line != "") {

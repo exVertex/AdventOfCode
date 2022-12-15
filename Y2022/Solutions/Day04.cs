@@ -10,7 +10,7 @@ namespace AdventOfCode.Y2022.Solutions {
         private int checkIfOverlaps (int[] top, int[] bottom) => (bottom[1] >= top[0]) ? 1 : 0; // checks if task ranges overlap
 
         protected override dynamic prepareCommon(string[] puzzleInput) {
-            List<int[][]> elfGroups = new List<int[][]>();
+            var elfGroups = new List<int[][]>();
 
             foreach (string line in puzzleInput) {
                 string[] elfGroup = line.Split(",");    // split the line into left and rigt assignment parts
