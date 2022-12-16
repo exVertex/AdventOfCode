@@ -5,7 +5,10 @@ using System.IO;
 
 namespace AdventOfCode.Core {
     class Utils {
-
+        
+        /// <summary> Opens a text file, reads all lines of the file, stores each line in a string and then closes the file. </summary>
+        /// <param name="pathToInput"> Represents path to the file location. </param>
+        /// <returns> An array of strings containing all lines of the file. </returns>
         internal static string[] getInput(String pathToInput) {
             
             if(!File.Exists(pathToInput)) {
@@ -16,7 +19,15 @@ namespace AdventOfCode.Core {
             return File.ReadAllLines(pathToInput);
         }
 
-        internal static int[] convertStringArrayToIntegerArray(String[] stringArray) => Array.ConvertAll(stringArray, element => int.Parse(element));
+        /// <summary> Converts an array of strings to an array of integers. </summary>
+        /// <param name="stringArray"> An array of strings. </param>
+        /// <returns> An array of the integers containing the converted elements from the string array. </returns>
+        internal static int[] convertToIntArray(String[] stringArray) => Array.ConvertAll(stringArray, element => int.Parse(element));
+
+        /// <summary> Converts an array of characters to an array of integers. </summary>
+        /// <param name="stringArray"> An array of characteres. </param>
+        /// <returns> An array of the integers containing the converted elements from the char array. </returns>
+        internal static int[] convertToIntArray(char[] charArray) => Array.ConvertAll(charArray, element => (int)Char.GetNumericValue(element));
 
         public static int[] parsePuzzleInputToIntegerArray(String pathToInput) {
             var storage = File.ReadAllLines(pathToInput);
@@ -31,7 +42,7 @@ namespace AdventOfCode.Core {
         public static int[] sliceLineToIntegerArray(String pathToInput) {
             var storage = File.ReadAllLines(pathToInput);
         
-            return convertStringArrayToIntegerArray(storage[0].Split(','));
+            return convertToIntArray(storage[0].Split(','));
         }
         public static string[] parsePuzzleInputToStringArray(String pathToInput) {
             var storage = File.ReadAllLines(pathToInput);
