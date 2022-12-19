@@ -1,17 +1,26 @@
+using System;
 using AdventOfCode.Core;
 
 namespace AdventOfCode.Y2022.Solutions {
     public class Day08: Day {
         protected override dynamic prepareCommon(string[] puzzleInput) {
-            throw new System.NotImplementedException();
+            var treePlantation = Utils.convertToIntArray(puzzleInput);
+            
+            foreach (var item in puzzleInput)
+            {
+                var test = item.ToCharArray();
+                Console.WriteLine(test[0]); 
+            }
+
+            return "";
         }
 
         protected override int getPartOne(dynamic key) {
-            throw new System.NotImplementedException();
+            return 0;
         }
 
         protected override int getPartTwo(dynamic key) {
-            throw new System.NotImplementedException();
+            return 0;
         }
 
         public Day08() {

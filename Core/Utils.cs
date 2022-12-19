@@ -16,7 +16,7 @@ namespace AdventOfCode.Core {
             return File.ReadAllLines(pathToInput);
         }
 
-        internal static int[] convertStringArrayToIntegerArray(String[] stringArray) => Array.ConvertAll(stringArray, element => int.Parse(element));
+        internal static int[] convertToIntArray(String[] stringArray) => Array.ConvertAll(stringArray, element => int.Parse(element));
 
         public static int[] parsePuzzleInputToIntegerArray(String pathToInput) {
             var storage = File.ReadAllLines(pathToInput);
@@ -31,7 +31,7 @@ namespace AdventOfCode.Core {
         public static int[] sliceLineToIntegerArray(String pathToInput) {
             var storage = File.ReadAllLines(pathToInput);
         
-            return convertStringArrayToIntegerArray(storage[0].Split(','));
+            return convertToIntArray(storage[0].Split(','));
         }
         public static string[] parsePuzzleInputToStringArray(String pathToInput) {
             var storage = File.ReadAllLines(pathToInput);
