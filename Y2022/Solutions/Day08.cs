@@ -7,7 +7,7 @@ namespace AdventOfCode.Y2022.Solutions {
         protected override dynamic prepareCommon(string[] puzzleInput) {
             var treePlantation = new int[puzzleInput.Length][]; // new jagged int[] to store tree heights
 
-            for (int i = 0; i < puzzleInput.Length; i++) {  // fill treePlantation array with array of converted integers
+            for (int i = 0; i < puzzleInput.Length; i++) {  // fill key array with array of converted integers
                 treePlantation[i] = Utils.convertToIntArray(puzzleInput[i].ToCharArray());
             }
 
@@ -15,51 +15,50 @@ namespace AdventOfCode.Y2022.Solutions {
         }
 
         protected override int getPartOne(dynamic key) {
-            var treePlantation = (int[][])key;
-            var coordinatesOfVisibleTrees = new HashSet<(int, int)>();
+            var coordinatesOfVisibleTrees = new HashSet<(int, int)>();  // hashset where coordinates of every visible tree will be stored
 
-            for (int y = 0; y < treePlantation.Length; y++) {
+            for (int y = 0; y < key.Length; y++) {
                 int x = 0;
                 int highestSoFar = -1;
 
-                while (x < treePlantation[y].Length && highestSoFar < 9) {
-                    if (treePlantation[y][x] > highestSoFar) {
-                        highestSoFar = treePlantation[y][x];
+                while (x < key[y].Length && highestSoFar < 9) { // scar for visible trees: left -> right
+                    if (key[y][x] > highestSoFar) {
+                        highestSoFar = key[y][x];
                         coordinatesOfVisibleTrees.Add((y, x));
                     }
                     x++;
                 }
 
-                x = treePlantation[y].Length-1;
+                x = key[y].Length-1;
                 highestSoFar = -1;
 
-                while(x >= 0 && highestSoFar < 9) {
-                    if (treePlantation[y][x] > highestSoFar) {
-                        highestSoFar = treePlantation[y][x];
+                while(x >= 0 && highestSoFar < 9) { // scan for visible trees: right -> left
+                    if (key[y][x] > highestSoFar) {
+                        highestSoFar = key[y][x];
                         coordinatesOfVisibleTrees.Add((y, x));
                     }
                     x--;
                 }
             }
 
-            for (int x = 0; x < treePlantation[0].Length; x++) {
+            for (int x = 0; x < key[0].Length; x++) {
                 int y = 0;
                 int highestSoFar = -1;
 
-                while (y < treePlantation.Length && highestSoFar < 9) {
-                    if (treePlantation[y][x] > highestSoFar) {
-                        highestSoFar = treePlantation[y][x];
+                while (y < key.Length && highestSoFar < 9) {    // scan for visible trees: top -> bottom
+                    if (key[y][x] > highestSoFar) {
+                        highestSoFar = key[y][x];
                         coordinatesOfVisibleTrees.Add((y, x));
                     }
                     y++;
                 }
                 
-                y = treePlantation.Length-1;
+                y = key.Length-1;
                 highestSoFar = -1;
 
-                while(y >= 0 && highestSoFar < 9) {
-                    if (treePlantation[y][x] > highestSoFar) {
-                        highestSoFar = treePlantation[y][x];
+                while(y >= 0 && highestSoFar < 9) { // scan for visible trees: bottom -> top
+                    if (key[y][x] > highestSoFar) {
+                        highestSoFar = key[y][x];
                         coordinatesOfVisibleTrees.Add((y, x));
                     }
                     y--;
@@ -67,7 +66,6 @@ namespace AdventOfCode.Y2022.Solutions {
             }
 
             return coordinatesOfVisibleTrees.Count;
-
         }
 
         protected override int getPartTwo(dynamic key) {
