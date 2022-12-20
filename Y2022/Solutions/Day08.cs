@@ -10,6 +10,14 @@ namespace AdventOfCode.Y2022.Solutions {
             int leftScore, rightScore, topScore, bottomScore, treeHeight, floatX, floatY;
             leftScore = rightScore = topScore = bottomScore = 0;
 
+            // right
+            floatX = 1;
+            do {
+                rightScore++;
+                floatX++;
+            } while (floatX < treePlantation[y].Length && (treePlantation[y][floatX] > treePlantation[y][x]) && (treePlantation[y][floatX] != treePlantation[y][x]));
+
+            /* 
             treeHeight = 0;
 
             floatX = x+1;
@@ -52,9 +60,9 @@ namespace AdventOfCode.Y2022.Solutions {
                     topScore++;
                 }
                 floatY--;
-            }
+            } */ 
 
-            return topScore * bottomScore * leftScore * rightScore;
+            return rightScore;
         }
 
         protected override dynamic prepareCommon(string[] puzzleInput) {
@@ -127,11 +135,13 @@ namespace AdventOfCode.Y2022.Solutions {
 
             // highestScenicScore = getScenicScore(treePlantation, 1, 2);
             
-            for (int y = 0; y < key.Length; y++) {
-                for (int x = 0; x <key[y].Length; x++) {
+            for (int y = 1; y < key.Length-1; y++) {
+                for (int x = 1; x <key[y].Length-1; x++) {
+                    Console.Write(key[y][x] + " [" + getScenicScore(treePlantation, x, y) + "] ");
                     int scenicScore = getScenicScore(treePlantation, x, y);
                     highestScenicScore = (scenicScore > highestScenicScore) ? scenicScore : highestScenicScore;
                 }
+                Console.WriteLine(" ");
             } 
             return highestScenicScore;
         }
