@@ -7,62 +7,34 @@ namespace AdventOfCode.Y2022.Solutions {
 
         private int getScenicScore(int[][] treePlantation, int x, int y) {
             
-            int leftScore, rightScore, topScore, bottomScore, treeHeight, floatX, floatY;
-            leftScore = rightScore = topScore = bottomScore = 0;
+            int leftScore, rightScore, upScore, downScore, index;
+            leftScore = rightScore = upScore = downScore = 0;
 
-            // right
-            floatX = 1;
+            index = x; // count trees visible from the main tree - right
             do {
                 rightScore++;
-                floatX++;
-            } while (floatX < treePlantation[y].Length && (treePlantation[y][floatX] > treePlantation[y][x]) && (treePlantation[y][floatX] != treePlantation[y][x]));
+                index++;
+            } while (index < treePlantation[y].Length-1 && treePlantation[y][index] < treePlantation[y][x]);
 
-            /* 
-            treeHeight = 0;
+            index = x; // count trees visible from the main tree - left
+            do {
+                leftScore++;
+                index--;
+            } while (index > 0 && treePlantation[y][index] < treePlantation[y][x]);
 
-            floatX = x+1;
-            while (floatX < treePlantation[y].Length && treeHeight <= treePlantation[y][x]) { // count trees visible from the main tree - right 
-                if (treePlantation[y][floatX] >= treeHeight) {
-                    treeHeight = treePlantation[y][floatX];
-                    rightScore++;
-                }
-                floatX++;
-            }
+            index = y; // count trees visible from the main tree - down
+            do {
+                downScore++;
+                index++;
+            } while (index < treePlantation[y].Length-1 && treePlantation[index][x] < treePlantation[y][x]);
 
-            treeHeight = 0;
+            index = y; // count trees visible from the main tree - up
+            do {
+                upScore++;
+                index--;
+            } while (index > 0 && treePlantation[index][x] < treePlantation[y][x]);
 
-            floatX = x-1;
-            while (floatX >= 0 && treeHeight <= treePlantation[y][x]) {    // count trees visible from the main tree - left
-                if (treePlantation[y][floatX] >= treeHeight) {
-                    treeHeight = treePlantation[y][floatX];
-                    leftScore++;
-                }
-                floatX--;
-            }
-
-            treeHeight = 0;
-
-            floatY = y+1;
-            while (floatY < treePlantation.Length && treeHeight <= treePlantation[y][x]) {    // count trees visible from the main tree - bottom
-                if (treePlantation[floatY][x] >= treeHeight) {
-                    treeHeight = treePlantation[floatY][x];
-                    bottomScore++;
-                }
-                floatY++;
-            }
-
-            treeHeight = 0;
-
-            floatY = y-1;
-            while (floatY >= 0 && treeHeight <= treePlantation[y][x]) {    // count trees visible from the main tree - top
-                if (treePlantation[floatY][x] >= treeHeight) {
-                    treeHeight = treePlantation[floatY][x];
-                    topScore++;
-                }
-                floatY--;
-            } */ 
-
-            return rightScore;
+            return rightScore * leftScore * upScore * downScore;
         }
 
         protected override dynamic prepareCommon(string[] puzzleInput) {
@@ -83,6 +55,7 @@ namespace AdventOfCode.Y2022.Solutions {
                 int highestTreeHeightSoFar = -1;
 
                 while (x < key[y].Length && highestTreeHeightSoFar < 9) { // scar for visible trees: left -> right
+
                     if (key[y][x] > highestTreeHeightSoFar) {
                         highestTreeHeightSoFar = key[y][x];
                         coordinatesOfVisibleTrees.Add((y, x));
@@ -94,6 +67,7 @@ namespace AdventOfCode.Y2022.Solutions {
                 highestTreeHeightSoFar = -1;
 
                 while (x >= 0 && highestTreeHeightSoFar < 9) { // scan for visible trees: right -> left
+
                     if (key[y][x] > highestTreeHeightSoFar) {
                         highestTreeHeightSoFar = key[y][x];
                         coordinatesOfVisibleTrees.Add((y, x));
@@ -107,6 +81,7 @@ namespace AdventOfCode.Y2022.Solutions {
                 int highestSoFar = -1;
 
                 while (y < key.Length && highestSoFar < 9) {    // scan for visible trees: top -> bottom
+
                     if (key[y][x] > highestSoFar) {
                         highestSoFar = key[y][x];
                         coordinatesOfVisibleTrees.Add((y, x));
@@ -118,6 +93,7 @@ namespace AdventOfCode.Y2022.Solutions {
                 highestSoFar = -1;
 
                 while (y >= 0 && highestSoFar < 9) { // scan for visible trees: bottom -> top
+                
                     if (key[y][x] > highestSoFar) {
                         highestSoFar = key[y][x];
                         coordinatesOfVisibleTrees.Add((y, x));
@@ -132,16 +108,12 @@ namespace AdventOfCode.Y2022.Solutions {
         protected override int getPartTwo(dynamic key) {
             var treePlantation = (int[][])key;
             int highestScenicScore = 0;
-
-            // highestScenicScore = getScenicScore(treePlantation, 1, 2);
             
             for (int y = 1; y < key.Length-1; y++) {
                 for (int x = 1; x <key[y].Length-1; x++) {
-                    Console.Write(key[y][x] + " [" + getScenicScore(treePlantation, x, y) + "] ");
                     int scenicScore = getScenicScore(treePlantation, x, y);
                     highestScenicScore = (scenicScore > highestScenicScore) ? scenicScore : highestScenicScore;
                 }
-                Console.WriteLine(" ");
             } 
             return highestScenicScore;
         }
