@@ -15,7 +15,8 @@ namespace AdventOfCode.Core {
             new Y2022.Solutions.Day09(),
             new Y2022.Solutions.Day10(),
             new Y2022.Solutions.Day11(),
-            new Y2022.Solutions.Day12()
+            new Y2022.Solutions.Day12(),
+            new Y2023.Solutions.Day01()
             };
 
         internal static void printInstructions() {

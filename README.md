@@ -5,7 +5,7 @@ Initially, this was a project where my AoC solutions were stored. With time, it 
 
 🎄🎅🎄🎅🎄🎅🎄🎅🎄🎅🎄🎅🎄🎅🎄🎅🎄🎅🎄🎅🎄🎅🎄🎅🎄🎅
 ## Set-up
-<em>Prerequisites:</strong> [.NET 7.0](https://dotnet.microsoft.com/en-us/download/dotnet/7.0) installed on your device.</em>
+<em>Prerequisites:</strong> [.NET 8.0](https://dotnet.microsoft.com/en-us/download/dotnet/8.0) installed on your device.</em>
 1. Clone the repository
 2. Open a terminal and run `dotent run` at root.
     - If you run the command without any arguments, it will get the result of the latest puzzle.
@@ -19,6 +19,7 @@ Initially, this was a project where my AoC solutions were stored. With time, it 
 
 | Year\Day | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 20 | 21 | 22 | 23 | 24 | 25 |
 | -------- | - | - | - | - | - | - | - | - | - | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- | 
+| 2023 |
 | 2022 | ✔ | ✔ | ✔ | ✔ |  | ✔ |  | ✔ | |  |  |  | 
 | 2021 | 💻 | 🧻 | 🧻 | 🧻 | 🧻 | 🧻 | | 🧻 | 🧻 | | | | | 🧻 |
 | 2020 |
