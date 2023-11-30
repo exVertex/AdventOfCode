@@ -16,6 +16,12 @@ namespace AdventOfCode.Core {
                 Environment.Exit(0);
             }
 
+if( new FileInfo( pathToInput ).Length == 0 )
+{
+                Console.WriteLine("Uh oh! File that contains puzzle input is empty.");
+                Environment.Exit(0);}
+
+
             return File.ReadAllLines(pathToInput);
         }
 
