@@ -1,6 +1,7 @@
 using AdventOfCode.Core;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System;
 
 namespace AdventOfCode.Y2023.Solutions {
@@ -17,9 +18,7 @@ namespace AdventOfCode.Y2023.Solutions {
                         digits += character;
                     }
                 }
-                if (digits.Length > 0) {
-                    calibrationValues.Add(int.Parse(digits[0] + "" + digits[digits.Length -1]));
-                }
+                calibrationValues.Add(int.Parse(digits[0] + "" + digits[digits.Length -1]));
             };
 
            return(calibrationValues.Sum(x => x));
@@ -30,70 +29,16 @@ namespace AdventOfCode.Y2023.Solutions {
             var calibrationValues = new List<int> {};
 
             for (int i = 0; i <key.Length; i++) {
-                if (key[i].Contains("eightwo")) {
-                    key[i] = key[i].Replace("eightwo", "82");
-                }
-                if (key[i].Contains("eighthree")) {
-                    key[i] = key[i].Replace("eightree", "83");
-                }
-                if (key[i].Contains("oneight")) {
-                    key[i] = key[i].Replace("oneight", "18");
-                }
-                if (key[i].Contains("twone")) {
-                    key[i] = key[i].Replace("twone", "21");
-                }
-                if (key[i].Contains("twone")) {
-                    key[i] = key[i].Replace("twone", "21");
-                }
-                if (key[i].Contains("threeight")) {
-                    key[i] = key[i].Replace("threeight", "38");
-                }
-                if (key[i].Contains("fiveight")) {
-                    key[i] = key[i].Replace("fiveight", "58");
-                }
-                if (key[i].Contains("sevenine")) {
-                    key[i] = key[i].Replace("sevenine", "79");
-                }
-                if (key[i].Contains("eighthree")) {
-                    key[i] = key[i].Replace("eightree", "83");
-                }
-                if (key[i].Contains("nineight")) {
-                    key[i] = key[i].Replace("nineight", "98");
-                }
-                if (key[i].Contains("zerone")) {
-                    key[i] = key[i].Replace("zerone", "01");
-                }
-                if (key[i].Contains("one")) {
-                    key[i] = key[i].Replace("one", "1");
-                }
-                if (key[i].Contains("two")) {
-                    key[i] = key[i].Replace("two", "2");
-                }
-                if (key[i].Contains("three")) {
-                    key[i] = key[i].Replace("three", "3");
-                }
-                if (key[i].Contains("four")) {
-                    key[i] = key[i].Replace("four", "4");
-                }
-                if (key[i].Contains("five")) {
-                    key[i] = key[i].Replace("five", "5");
-                }
-                if (key[i].Contains("six")) {
-                    key[i] = key[i].Replace("six", "6");
-                }
-                if (key[i].Contains("seven")) {
-                    key[i] = key[i].Replace("seven", "7");
-                }
-                if (key[i].Contains("eight")) {
-                    key[i] = key[i].Replace("eight", "8");
-                }
-                if (key[i].Contains("nine")) {
-                    key[i] = key[i].Replace("nine", "9");
-                }
-                if (key[i].Contains("zero")) {
-                    key[i] = key[i].Replace("zero", "0");
-                }
-
+                key[i] = key[i].Replace("one", "o1e");
+                key[i] = key[i].Replace("two", "t2o");
+                key[i] = key[i].Replace("three", "t3e");
+                key[i] = key[i].Replace("four", "f4r");
+                key[i] = key[i].Replace("five", "f5e");
+                key[i] = key[i].Replace("six", "s6x");
+                key[i] = key[i].Replace("seven", "s7n");
+                key[i] = key[i].Replace("eight", "e8t");
+                key[i] = key[i].Replace("nine", "n9e");
+                key[i] = key[i].Replace("zero", "z0o");
             }
 
             foreach (var line in key ) {
