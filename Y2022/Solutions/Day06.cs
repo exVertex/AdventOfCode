@@ -16,9 +16,9 @@ namespace AdventOfCode.Y2022.Solutions {
             return datastream.Length;   // safety net
         }
 
-        protected override int getPartOne(dynamic key) => getMarkerPosition(key, 4);
+        protected override int GetPartOne(dynamic key) => getMarkerPosition(key, 4);
 
-        protected override int getPartTwo(dynamic key) => getMarkerPosition(key, 14);
+        protected override int GetPartTwo(dynamic key) => getMarkerPosition(key, 14);
 
         public Day06() {
             day = 6;

@@ -9,7 +9,7 @@ namespace AdventOfCode.Y2022.Solutions {
         private int checkIfContains (int[] top, int[] bottom) => (top[1] >= bottom[1] && bottom[0] >= top[0]) ? 1 : 0; // checks if one task range contains the other
         private int checkIfOverlaps (int[] top, int[] bottom) => (bottom[1] >= top[0]) ? 1 : 0; // checks if task ranges overlap
 
-        protected override dynamic prepareCommon(string[] puzzleInput) {
+        protected override dynamic PrepareCommon(string[] puzzleInput) {
             var elfGroups = new List<int[][]>();
 
             foreach (string line in puzzleInput) {
@@ -26,11 +26,11 @@ namespace AdventOfCode.Y2022.Solutions {
             return elfGroups;   // returns puzzle input in the form of list of jagged arrays
         }
 
-        protected override int getPartOne(dynamic key) => (new List<int[][]>(key)).Sum(
+        protected override int GetPartOne(dynamic key) => (new List<int[][]>(key)).Sum(
             elfGroup => (elfGroup[0][1] > elfGroup[1][1] || (elfGroup[0][1] == elfGroup[1][1] && elfGroup[0][0] < elfGroup[1][0])) ?
             checkIfContains(elfGroup[0], elfGroup[1]) : checkIfContains(elfGroup[1], elfGroup[0]));
         
-        protected override int getPartTwo(dynamic key) => (new List<int[][]>(key)).Sum(
+        protected override int GetPartTwo(dynamic key) => (new List<int[][]>(key)).Sum(
             elfGroup => (elfGroup[0][1] > elfGroup[1][1] || (elfGroup[0][1] == elfGroup[1][1] && elfGroup[0][0] < elfGroup[1][0])) ?
             checkIfOverlaps(elfGroup[0], elfGroup[1]) : checkIfOverlaps(elfGroup[1], elfGroup[0]));
 

@@ -7,26 +7,26 @@ namespace AdventOfCode.Core {
         public int year { get; protected set; }
         protected string title { get; set; }
         
-        protected virtual dynamic prepareCommon(string[] puzzleInput) => puzzleInput;
-        protected abstract int getPartOne(dynamic key);
-        protected abstract int getPartTwo(dynamic key);
+        protected virtual dynamic PrepareCommon(string[] puzzleInput) => puzzleInput;
+        protected abstract int GetPartOne(dynamic key);
+        protected abstract int GetPartTwo(dynamic key);
 
-        protected string[] preparePuzzleInput(string pathToInput) => Utils.getInput(pathToInput);
+        protected static string[] PreparePuzzleInput(string pathToInput) => Utils.getInput(pathToInput);
         
-        public void getResults() {
-            var key = prepareCommon(preparePuzzleInput(string.Format("./Y{0}/PuzzleInputs/day{1}.txt", this.year, this.day.ToString("00"))));
+        public void GetResults() {
+            var key = PrepareCommon(PreparePuzzleInput(string.Format("./Y{0}/PuzzleInputs/day{1}.txt", this.year, this.day.ToString("00"))));
 
             var watch = new Stopwatch();
 
             Console.WriteLine( "--- Day " + this.day + ": " + this.title + " ---");
             
             watch.Start();
-            var partOne = getPartOne(key);
+            var partOne = GetPartOne(key);
             watch.Stop();
             Console.WriteLine("Part 1: " + partOne + " (" + watch.ElapsedMilliseconds + " ms)");
             
             watch.Start();
-            var partTwo = getPartTwo(key);
+            var partTwo = GetPartTwo(key);
             watch.Stop();
             Console.WriteLine("Part 2: " + partTwo + " (" + watch.ElapsedMilliseconds + " ms)");
         }

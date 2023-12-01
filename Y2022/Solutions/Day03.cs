@@ -8,7 +8,7 @@ namespace AdventOfCode.Y2022.Solutions {
 
         protected int getPriorityValue(int item) => (item > 91) ? item - 96 : item - 38;    // get value of the priority through char ascii values
         
-        protected override int getPartOne(dynamic key) {
+        protected override int GetPartOne(dynamic key) {
             var commonItems = new List<char>();  // list to store items common in both compartments
 
             Array.ForEach((string[])key, rucksack => commonItems.Add( // fill commonItems with letters contained in both substrings
@@ -17,7 +17,7 @@ namespace AdventOfCode.Y2022.Solutions {
             return commonItems.Sum(item => getPriorityValue((int)item));   // return sum of all priorities
         }
 
-        protected override int getPartTwo(dynamic key) {
+        protected override int GetPartTwo(dynamic key) {
             var rucksacks = new List<string>(key); // store puzzle input in list of strings
             var commonItems = new List<char>(); // list to store items common in both compartments
 

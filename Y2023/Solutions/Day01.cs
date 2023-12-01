@@ -2,7 +2,6 @@ using AdventOfCode.Core;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
-using System;
 
 namespace AdventOfCode.Y2023.Solutions {
     public class Day01 : Day {
@@ -20,7 +19,7 @@ namespace AdventOfCode.Y2023.Solutions {
                 default: { return text; };
             };
         }
-        protected override int getPartOne(dynamic key) {
+        protected override int GetPartOne(dynamic key) {
             var calibrationValues = new List<string> {};   // create an empty list of integers, where correct calibration values will be stored
 
             foreach(string line in key) {
@@ -30,9 +29,9 @@ namespace AdventOfCode.Y2023.Solutions {
                 if (first.Length > 0) calibrationValues.Add(first + last);   // join digits to form calibration value and add it to the list
             }
             
-           return(calibrationValues.Sum(x => int.Parse(x)));   // return the sum of calibration values
+           return calibrationValues.Sum(x => int.Parse(x));   // return the sum of calibration values
         }
-        protected override int getPartTwo(dynamic key) {
+        protected override int GetPartTwo(dynamic key) {
             var calibrationValues = new List<string> {};    // create an empty list of integers, where correct calibration values will be stored
             
             foreach(string line in key) {
@@ -46,7 +45,7 @@ namespace AdventOfCode.Y2023.Solutions {
                 if (first.Length > 0) calibrationValues.Add(first + last);   // join digits to form calibration value and add it to the list
             }
 
-           return(calibrationValues.Sum(x => int.Parse(x)));    // return the sum of calibration values
+           return calibrationValues.Sum(x => int.Parse(x));    // return the sum of calibration values
         }
 
         public Day01() {

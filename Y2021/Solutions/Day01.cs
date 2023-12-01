@@ -31,12 +31,12 @@ namespace AdventOfCode.Y2021.Solutions {
             throw new NotImplementedException();
         }
 
-        protected override int getPartOne(dynamic key) {
+        protected override int GetPartOne(dynamic key) {
             throw new NotImplementedException();
         }
 
-        protected override int getPartTwo(dynamic key) {
-            throw new NotImplementedException();
+        protected override int GetPartTwo(dynamic key) {
+            throw new NotImplementePException();
         }
     }  
 }   

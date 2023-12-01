@@ -5,7 +5,7 @@ using System.Linq;
 namespace AdventOfCode.Y2022.Solutions {
     public class Day01 : Day {
        
-        protected override dynamic prepareCommon(string[] puzzleInput) {
+        protected override dynamic PrepareCommon(string[] puzzleInput) {
             int elf = 0;
             var elfCalorieStorage = new List<int> {};
 
@@ -21,9 +21,9 @@ namespace AdventOfCode.Y2022.Solutions {
             return elfCalorieStorage.OrderByDescending(x => x).ToList();
         }
 
-        protected override int getPartOne(dynamic key) => ((List<int>)key).First();
+        protected override int GetPartOne(dynamic key) => ((List<int>)key).First();
 
-        protected override int getPartTwo(dynamic key) {
+        protected override int GetPartTwo(dynamic key) {
             List<int> elfCalorieStorage = (List<int>)key;
             return (elfCalorieStorage[0] + elfCalorieStorage[1] + elfCalorieStorage[2]);
         }

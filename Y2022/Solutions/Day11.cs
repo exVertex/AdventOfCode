@@ -3,15 +3,15 @@ using AdventOfCode.Core;
 namespace AdventOfCode.Y2022.Solutions {
     public class Day11 : Day {
 
-        protected override dynamic prepareCommon(string[] puzzleInput) {
+        protected override dynamic PrepareCommon(string[] puzzleInput) {
             throw new System.NotImplementedException();
         }
 
-        protected override int getPartOne(dynamic key) {
+        protected override int GetPartOne(dynamic key) {
             throw new System.NotImplementedException();
         }
 
-        protected override int getPartTwo(dynamic key) {
+        protected override int GetPartTwo(dynamic key) {
             throw new System.NotImplementedException();
         }
 

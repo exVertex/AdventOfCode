@@ -37,7 +37,7 @@ namespace AdventOfCode.Y2022.Solutions {
             return rightScore * leftScore * upScore * downScore;
         }
 
-        protected override dynamic prepareCommon(string[] puzzleInput) {
+        protected override dynamic PrepareCommon(string[] puzzleInput) {
             var treePlantation = new int[puzzleInput.Length][]; // new jagged int[] to store tree heights
 
             for (int i = 0; i < puzzleInput.Length; i++) {  // fill key array with array of converted integers
@@ -47,7 +47,7 @@ namespace AdventOfCode.Y2022.Solutions {
             return treePlantation;
         }
 
-        protected override int getPartOne(dynamic key) {
+        protected override int GetPartOne(dynamic key) {
             var coordinatesOfVisibleTrees = new HashSet<(int, int)>();  // hashset where coordinates of every visible tree will be stored
 
             for (int y = 0; y < key.Length; y++) {
@@ -105,7 +105,7 @@ namespace AdventOfCode.Y2022.Solutions {
             return coordinatesOfVisibleTrees.Count;
         }
 
-        protected override int getPartTwo(dynamic key) {
+        protected override int GetPartTwo(dynamic key) {
             var treePlantation = (int[][])key;
             int highestScenicScore = 0;
             
