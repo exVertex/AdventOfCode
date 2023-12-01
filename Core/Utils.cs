@@ -9,19 +9,15 @@ namespace AdventOfCode.Core {
         /// <summary> Opens a text file, reads all lines of the file, stores each line in a string and then closes the file. </summary>
         /// <param name="pathToInput"> Represents path to the file location. </param>
         /// <returns> An array of strings containing all lines of the file. </returns>
-        internal static string[] getInput(String pathToInput) {
-            
-            if(!File.Exists(pathToInput)) {
+        internal static string[] getInput(string pathToInput) {
+            if (!File.Exists(pathToInput)) {
                 Console.WriteLine("Uh oh! File that contains puzzle input for desired solution is missing.");
                 Environment.Exit(0);
             }
-
-if( new FileInfo( pathToInput ).Length == 0 )
-{
+            if (new FileInfo( pathToInput ).Length == 0 ) {
                 Console.WriteLine("Uh oh! File that contains puzzle input is empty.");
-                Environment.Exit(0);}
-
-
+                Environment.Exit(0);
+            }
             return File.ReadAllLines(pathToInput);
         }
 

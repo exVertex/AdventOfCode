@@ -6,59 +6,53 @@ using System;
 
 namespace AdventOfCode.Y2023.Solutions {
     public class Day01 : Day {
-        protected override int getPartOne(dynamic key) {
-
-            var calibrationValues = new List<int> {};
-
-            foreach (var line in key ) {
-                string digits = "";
-                foreach(var character in line) {
-                    bool isDigit = int.TryParse(character + "", out int n);
-                    if(isDigit) {
-                        digits += character;
-                    }
-                }
-                calibrationValues.Add(int.Parse(digits[0] + "" + digits[digits.Length -1]));
+        private string convertWordToDigit(string text) {
+            switch(text) {
+                case "one": { return "1"; };
+                case "two": { return "2"; };
+                case "three": { return "3"; };
+                case "four": { return "4"; };
+                case "five": { return "5"; };
+                case "six": { return "6"; };
+                case "seven": { return "7"; };
+                case "eight": { return "8"; };
+                case "nine": { return "9"; };
+                default: { return text; };
             };
-
-           return(calibrationValues.Sum(x => x));
         }
+        protected override int getPartOne(dynamic key) {
+            var calibrationValues = new List<string> {};   // create an empty list of integers, where correct calibration values will be stored
 
+            foreach(string line in key) {
+                var first = Regex.Match(line, @"\d").ToString();   // find first digit
+                var last = Regex.Match(line, @"\d", RegexOptions.RightToLeft).ToString();  // find last digit in sequence
+
+                if (first.Length > 0) calibrationValues.Add(first + last);   // join digits to form calibration value and add it to the list
+            }
+            
+           return(calibrationValues.Sum(x => int.Parse(x)));   // return the sum of calibration values
+        }
         protected override int getPartTwo(dynamic key) {
+            var calibrationValues = new List<string> {};    // create an empty list of integers, where correct calibration values will be stored
+            
+            foreach(string line in key) {
+                var pattern =  @"(\d|one|two|three|four|five|six|seven|eight|nine)";    // RegEx: find digit or any of the number words 
+                var first = Regex.Match(line, pattern).ToString();   // find first occurrence of number, text or digit
+                var last = Regex.Match(line, pattern, RegexOptions.RightToLeft).ToString();  // find last occurrence of number, text or digit
 
-            var calibrationValues = new List<int> {};
+                if (first.Length > 1) first = convertWordToDigit(first);    // if found number is in text form, convert it to a digit
+                if (last.Length > 1) last = convertWordToDigit(last);   // if found number is in text form, convert it to a digit
 
-            for (int i = 0; i <key.Length; i++) {
-                key[i] = key[i].Replace("one", "o1e");
-                key[i] = key[i].Replace("two", "t2o");
-                key[i] = key[i].Replace("three", "t3e");
-                key[i] = key[i].Replace("four", "f4r");
-                key[i] = key[i].Replace("five", "f5e");
-                key[i] = key[i].Replace("six", "s6x");
-                key[i] = key[i].Replace("seven", "s7n");
-                key[i] = key[i].Replace("eight", "e8t");
-                key[i] = key[i].Replace("nine", "n9e");
-                key[i] = key[i].Replace("zero", "z0o");
+                if (first.Length > 0) calibrationValues.Add(first + last);   // join digits to form calibration value and add it to the list
             }
 
-            foreach (var line in key ) {
-                string digits = "";
-                foreach(var character in line) {
-                    bool isDigit = int.TryParse(character + "", out int n);
-                    if(isDigit) {
-                        digits += character;
-                    }
-                }
-                calibrationValues.Add(int.Parse(digits[0] + "" + digits[digits.Length -1]));
-            };
-
-           return(calibrationValues.Sum(x => x));
+           return(calibrationValues.Sum(x => int.Parse(x)));    // return the sum of calibration values
         }
 
         public Day01() {
             day = 1;
             year = 2023;
-            title = "";
+            title = "Trebuchet?!";
         }
     }
 }
