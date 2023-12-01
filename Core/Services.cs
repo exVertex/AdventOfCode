@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace AdventOfCode.Core {
     public class Services{
-        internal static List<Day> createDaysSolutions() => new List<Day> { 
+        internal static List<Day> CreateDaysSolutions() => [ 
             new Y2022.Solutions.Day01(),
             new Y2022.Solutions.Day02(),
             new Y2022.Solutions.Day03(),
@@ -17,9 +17,9 @@ namespace AdventOfCode.Core {
             new Y2022.Solutions.Day11(),
             new Y2022.Solutions.Day12(),
             new Y2023.Solutions.Day01()
-            };
+            ];
 
-        internal static void printInstructions() {
+        internal static void PrintInstructions() {
             Console.WriteLine("The command argument is not recognised.\n~~~~~~~~~~~~~~~");
             Console.WriteLine("Please enter date of desired solution in the following format YYYY DD.");
             Console.WriteLine("...or run the program without arguments to get the latest solution.");

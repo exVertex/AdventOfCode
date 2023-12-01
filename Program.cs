@@ -7,7 +7,7 @@ namespace AdventOfCode {
     class Program {
         static void Main(string[] args) {
 
-            List<Day> days = Services.createDaysSolutions();
+            List<Day> days = Services.CreateDaysSolutions();
 
             // in case of no arguments, it will get the results of the last solution added
             if (args.Length == 0) {
@@ -21,7 +21,7 @@ namespace AdventOfCode {
                     }
                 }
             } else {
-                Services.printInstructions();
+                Services.PrintInstructions();
             }
             
         }    

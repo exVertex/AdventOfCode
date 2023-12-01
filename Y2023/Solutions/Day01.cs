@@ -5,7 +5,7 @@ using System.Text.RegularExpressions;
 
 namespace AdventOfCode.Y2023.Solutions {
     public class Day01 : Day {
-        private string convertWordToDigit(string text) {
+        private static string ConvertWordToDigit(string text) {
             switch(text) {
                 case "one": { return "1"; };
                 case "two": { return "2"; };
@@ -39,8 +39,8 @@ namespace AdventOfCode.Y2023.Solutions {
                 var first = Regex.Match(line, pattern).ToString();   // find first occurrence of number, text or digit
                 var last = Regex.Match(line, pattern, RegexOptions.RightToLeft).ToString();  // find last occurrence of number, text or digit
 
-                if (first.Length > 1) first = convertWordToDigit(first);    // if found number is in text form, convert it to a digit
-                if (last.Length > 1) last = convertWordToDigit(last);   // if found number is in text form, convert it to a digit
+                if (first.Length > 1) first = ConvertWordToDigit(first);    // if found number is in text form, convert it to a digit
+                if (last.Length > 1) last = ConvertWordToDigit(last);   // if found number is in text form, convert it to a digit
 
                 if (first.Length > 0) calibrationValues.Add(first + last);   // join digits to form calibration value and add it to the list
             }

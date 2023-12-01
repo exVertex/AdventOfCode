@@ -27,16 +27,12 @@ namespace AdventOfCode.Y2021.Solutions {
             }
             return increases;
         }
-        protected override dynamic prepareCommon(string[] puzzleInput) {
-            throw new NotImplementedException();
-        }
-
         protected override int GetPartOne(dynamic key) {
             throw new NotImplementedException();
         }
 
         protected override int GetPartTwo(dynamic key) {
-            throw new NotImplementePException();
+            throw new NotImplementedException();
         }
     }  
 }   
