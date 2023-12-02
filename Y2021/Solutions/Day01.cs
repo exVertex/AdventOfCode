@@ -3,36 +3,45 @@ using System;
 
 namespace AdventOfCode.Y2021.Solutions {
     class Day01 : Day {
-        private static int calculcateMeasuermentIncreases(int[] input) {
-            int prevNumber = 0;
-            int increases = -1;
-
-            foreach (int line in input) { 
-                increases += (line > prevNumber) ? 1 : 0;
-                prevNumber = line;
-            }
-            return increases;
-        }
-
-        private static int calculcateThreeSumMeasuermentIncreases(int[] input) {
-            int increases = -1;
-            int sumA, prevSum, i;
-            sumA = prevSum = i = 0;
+        // private static int calculcateThreeSumMeasuermentIncreases(int[] input) {
+        //     int increases = -1;
+        //     int sumA, prevSum, i;
+        //     sumA = prevSum = i = 0;
             
-            while(i < input.Length-2) {
-                sumA = input[i] + input[i+1] + input[i+2];
-                increases += (prevSum < sumA) ? 1 : 0;
-                prevSum = sumA;
-                i++;
+        //     while(i < input.Length-2) {
+        //         sumA = input[i] + input[i+1] + input[i+2];
+        //         increases += (prevSum < sumA) ? 1 : 0;
+        //         prevSum = sumA;
+        //         i++;
+        //     }
+        //     return increases;
+        // }
+
+        protected override dynamic PrepareCommon(string[] puzzleInput)  => Utils.convertToIntArray(puzzleInput);
+        protected override int GetPartOne(dynamic key) {
+            int increases = 0;  // check for storing times the value increased
+
+            for (int i = 1; i < key.Length; i++) {
+                increases += (key[i] > key[i-1]) ? 1 : 0;   // add 1 to increases if current value is bigger than previous value
             }
             return increases;
-        }
-        protected override int GetPartOne(dynamic key) {
-            throw new NotImplementedException();
         }
 
         protected override int GetPartTwo(dynamic key) {
-            throw new NotImplementedException();
+            int increases = 0;  // check for storing times the value increased
+
+            for (int i = 2; i < key.Length - 1; i++) {
+                int firstWindow = key[i] + key[i - 1] + key[i - 2]; // store the sum of measurments in the first window
+                int secondWindow = key[i + 1] + key[i] + key[i - 1];    // store the sum measurements in the second window
+
+                increases += (secondWindow > firstWindow) ? 1 : 0;  // add 1 to increases if sum of second window is bigger than the sum of first window 
+            }
+            return increases;
+        }
+        public Day01() {
+            day = 1;
+            year = 2021;
+            title = "Sonar Sweep";
         }
     }  
 }   
