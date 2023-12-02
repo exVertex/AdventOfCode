@@ -1,10 +1,9 @@
+using AdventOfCode.Core;
 using System.Collections.Generic;
 using System.Linq;
-using AdventOfCode.Core;
 
 namespace AdventOfCode.Y2022.Solutions {
     public class Day02 : Day {
-
         protected const int Rock = 1;
         protected const int Paper = 2;
         protected const int Scissors = 3;

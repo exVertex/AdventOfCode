@@ -1,11 +1,10 @@
-using System;
+using AdventOfCode.Core;
 using System.Collections.Generic;
 using System.Linq;
-using AdventOfCode.Core;
+using System;
 
 namespace AdventOfCode.Y2022.Solutions {
     public class Day03 : Day {
-
         protected int getPriorityValue(int item) => (item > 91) ? item - 96 : item - 38;    // get value of the priority through char ascii values
         
         protected override int GetPartOne(dynamic key) {
@@ -16,7 +15,6 @@ namespace AdventOfCode.Y2022.Solutions {
 
             return commonItems.Sum(item => getPriorityValue((int)item));   // return sum of all priorities
         }
-
         protected override int GetPartTwo(dynamic key) {
             var rucksacks = new List<string>(key); // store puzzle input in list of strings
             var commonItems = new List<char>(); // list to store items common in both compartments
@@ -27,7 +25,6 @@ namespace AdventOfCode.Y2022.Solutions {
 
             return commonItems.Sum(item => getPriorityValue((int)item));
         }
-
         public Day03() {
             day = 3;
             year = 2022;
