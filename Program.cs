@@ -1,12 +1,11 @@
+using AdventOfCode.Core;
 using System.Collections.Generic;
 using System.Linq;
-using AdventOfCode.Core;
 
 namespace AdventOfCode {
     
     class Program {
         static void Main(string[] args) {
-
             List<Day> days = Services.CreateDaysSolutions();
 
             // in case of no arguments, it will get the results of the last solution added
@@ -22,8 +21,7 @@ namespace AdventOfCode {
                 }
             } else {
                 Services.PrintInstructions();
-            }
-            
+            }  
         }    
     }
 }
