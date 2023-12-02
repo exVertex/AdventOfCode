@@ -23,8 +23,9 @@ namespace AdventOfCode.Y2023.Solutions {
             var calibrationValues = new List<string> {};   // create an empty list of integers, where correct calibration values will be stored
 
             foreach(string line in key) {
-                var first = Regex.Match(line, @"\d").ToString();   // find first digit
-                var last = Regex.Match(line, @"\d", RegexOptions.RightToLeft).ToString();  // find last digit in sequence
+                var pattern = @"\d"; // RegEx: find any digit 
+                var first = Regex.Match(line, pattern).ToString();   // find first digit
+                var last = Regex.Match(line, pattern, RegexOptions.RightToLeft).ToString();  // find last digit in sequence
 
                 if (first.Length > 0) calibrationValues.Add(first + last);   // join digits to form calibration value and add it to the list
             }
