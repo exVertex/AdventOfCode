@@ -3,20 +3,6 @@ using System;
 
 namespace AdventOfCode.Y2021.Solutions {
     class Day01 : Day {
-        // private static int calculcateThreeSumMeasuermentIncreases(int[] input) {
-        //     int increases = -1;
-        //     int sumA, prevSum, i;
-        //     sumA = prevSum = i = 0;
-            
-        //     while(i < input.Length-2) {
-        //         sumA = input[i] + input[i+1] + input[i+2];
-        //         increases += (prevSum < sumA) ? 1 : 0;
-        //         prevSum = sumA;
-        //         i++;
-        //     }
-        //     return increases;
-        // }
-
         protected override dynamic PrepareCommon(string[] puzzleInput)  => Utils.convertToIntArray(puzzleInput);
         protected override int GetPartOne(dynamic key) {
             int increases = 0;  // check for storing times the value increased

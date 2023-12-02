@@ -5,7 +5,8 @@ namespace AdventOfCode.Core {
     public class Services{
         internal static List<Day> CreateDaysSolutions() => [
             new Y2020.Solutions.Day01(),
-            new Y2021.Solutions.Day01(), 
+            new Y2021.Solutions.Day01(),
+            new Y2021.Solutions.Day03(), 
             new Y2022.Solutions.Day01(),
             new Y2022.Solutions.Day02(),
             new Y2022.Solutions.Day03(),

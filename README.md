@@ -21,7 +21,7 @@ Initially, this was a project where my AoC solutions were stored. With time, it 
 | -------- | - | - | - | - | - | - | - | - | - | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- | 
 | 2023 | ✔ | ✔ |
 | 2022 | ✔ | ✔ | ✔ | ✔ |  | ✔ |  | ✔ | |  |  |  | 
-| 2021 | ✔ | 💻 | 🧻 | 🧻 | 🧻 | 🧻 | | 🧻 | 🧻 | | | | | 🧻 |
+| 2021 | ✔ | 💻 | 💻 | 🧻 | 🧻 | 🧻 | | 🧻 | 🧻 | | | | | 🧻 |
 | 2020 | ✔ | 💻 |
 
 <strong>Legend:</strong> ✔ done -- 💻 in development -- 🧻 solution available, but not supported by the interface
