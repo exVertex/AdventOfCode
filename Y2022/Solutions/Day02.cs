@@ -12,34 +12,28 @@ namespace AdventOfCode.Y2022.Solutions {
         protected const int Draw = 3;
         protected const int Loss = 0; 
 
-        private int getPickScore(char pick) {
+        private static int GetPickScore(char pick) {
             if (pick == 'X') return Rock;
             else if (pick == 'Y') return Paper;
             else return Scissors;
         }
-
-        private int getResultScore(char playerOne, char playerTwo) {
+        private static int GetResultScore(char playerOne, char playerTwo) {
             if ((playerOne== 'A' && playerTwo== 'Y') || (playerOne== 'B' && playerTwo== 'Z') || (playerOne== 'C' && playerTwo== 'X')) return Win;
             if ((playerOne== 'A' && playerTwo== 'Z') || (playerOne== 'B' && playerTwo== 'X') || (playerOne== 'C' && playerTwo== 'Y')) return Loss;
             else return Draw;
         }
-
-        private char setPlayerTwo(char playerOne, char playerTwo) {
+        private static char SetPlayerTwo(char playerOne, char playerTwo) {
             if ((playerTwo == 'X' && playerOne == 'A') || (playerTwo == 'Y' && playerOne == 'C') || (playerTwo == 'Z' && playerOne== 'B')) return 'Z';
             else if ((playerTwo == 'X' && playerOne== 'B') || (playerTwo == 'Y' && playerOne == 'A') || (playerTwo == 'Z' && playerOne == 'C')) return 'X';
             else return 'Y';
         }
-
-        private int getGameScore(char playerOne, char playerTwo, bool partTwo = false) {
-            playerTwo = (partTwo) ? setPlayerTwo(playerOne, playerTwo) : playerTwo; // sets playerTwo to correct option in order to get the desired game outcome 
-            return getPickScore(playerTwo) + getResultScore(playerOne, playerTwo); // return points for pick selection + points for game result
+        private static int GetGameScore(char playerOne, char playerTwo, bool partTwo = false) {
+            playerTwo = partTwo ? SetPlayerTwo(playerOne, playerTwo) : playerTwo; // sets playerTwo to correct option in order to get the desired game outcome 
+            return GetPickScore(playerTwo) + GetResultScore(playerOne, playerTwo); // return points for pick selection + points for game result
         }
 
-        protected override int GetPartOne(dynamic key) => (new List<string>(key)).Sum(round => getGameScore(round[0], round[2]));   // // calculate the sum of all scores
-
-        protected override int GetPartTwo(dynamic key) => (new List<string>(key)).Sum(round => getGameScore(round[0], round[2], true));   // calculate the sum of all scores 
-
-
+        protected override int GetPartOne(dynamic key) => new List<string>(key).Sum(round => GetGameScore(round[0], round[2]));   // // calculate the sum of all scores
+        protected override int GetPartTwo(dynamic key) => new List<string>(key).Sum(round => GetGameScore(round[0], round[2], true));   // calculate the sum of all scores 
         public Day02() {
             day = 2;
             year = 2022;
